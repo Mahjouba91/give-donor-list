@@ -34,8 +34,13 @@ function recent_givedonorlist( $atts ) {
 
 	$output = '';
 
-	// First check that Give exist
-	$donors = Give()->customers->get_customers( $number, $id );
+	/**
+	 * Filter the donnors list
+	 *
+	 * @since 1.0
+	 */
+	$donors = apply_filters( 'gdl/donors_list', Give()->customers->get_customers( $number, $id ), $args );
+
 	if ( is_array( $donors ) && ! empty( $donors ) ) {
 		shuffle( $donors );
 		$output = '<ul class="give-donors-list">';
