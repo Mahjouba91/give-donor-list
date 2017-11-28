@@ -12,32 +12,35 @@ add_shortcode( 'give_donor_list', 'recent_givedonorlist' );
 /**
  * Output recent GIVE donors in a list
  * @param array $atts 
- * @return list of names comma seperated
+ * @return string of names comma seperated
  */
 function recent_givedonorlist( $atts ) {
 
-    $args = shortcode_atts( 
+	if ( ! class_exists( 'Give' ) ) {
+		return '';
+	}
+
+	$args = shortcode_atts(
         array(
             'number'   =>   '100',
             'id'       =>   '1'
         ), $atts
     );
+
     $number = (int) $args['number'];
     $id = (int) $args['id'];
 
-
     $output = '';
-    $names  = '';
-    $donors = '';
 
-    //First check that Give exist
-        $donors = Give()->customers->get_customers( $number, $id );
-        foreach ( $donors as $donor ) {
-            if (sizeof($names) > 1){
-                $output .= $names.$donor->name.", ";
-            }else{
-                $output .= $names.$donor->name;
-            }
-        }
+    // First check that Give exist
+    $donors = Give()->customers->get_customers( $number, $id );
+    if ( is_array( $donors ) && ! empty( $donors ) ) {
+	    shuffle( $donors );
+	    $output = '<ul class="give-donors-list">';
+	    foreach ( $donors as $donor ) {
+		    $output .= '<li>' . $donor->name . "</li>";
+	    }
+	    $output .= '</ul>';
+    }
     return $output;
 }
