@@ -16,12 +16,11 @@ A [Give](https://givewp.com) Addon which allows you to output a list of comma se
 **FEATURES**
 
 Allows the author to specify
-* Form ID
 * Number of donors to be returned
 
 **BASIC USAGE**
 
-[give_donor_list id="9" number="100"]
+[give_donor_list number="100"]
 
 
 == Installation ==
