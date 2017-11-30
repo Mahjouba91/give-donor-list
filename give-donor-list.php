@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:    Give Donor List
+ * Plugin Name:    Give - Donor List
  * Description:    Adds a give_donor_list shortcode for easy display of donors
  * Version:        1.0
  * Author:         Florian TIAR
@@ -11,13 +11,9 @@
  *
  */
 
-
 // Defines Plugin directory for easy reference
-define( 'GIVEDONORLIST_DIR', dirname( __FILE__ ) );
-
-// Checks if GIVE is active. 
-// If not, it bails with an Admin notice as to why. 
-// If so, it loads the necessary scripts 
+define( 'GIVEDONORLIST_DIR', plugin_dir_path( __FILE__ ) );
+define( 'GIVEDONORLIST_VIEWS_FOLDER_NAME', 'give_donorlist' );
 
 function givedonorlist_plugin_init() {
 
@@ -43,7 +39,7 @@ function givedonorlist_plugin_init() {
 	} else {
 
 		// Include/Execute necessary files
-		include_once( GIVEDONORLIST_DIR . '/inc/givedonorlist-shortcodes.php' );
+		include_once( GIVEDONORLIST_DIR . '/classes/givedonorlist-shortcodes.php' );
 
 	}
 }
