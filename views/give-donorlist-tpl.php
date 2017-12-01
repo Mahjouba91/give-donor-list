@@ -5,6 +5,9 @@ if ( isset( $dons_query ) && $dons_query->have_posts() ) :
     <ul class="donor-list">
 		<?php while ( $dons_query->have_posts() ) : $dons_query->the_post();
 			$meta        = get_post_meta( get_the_ID() );
+			if ( empty( $meta) || ! is_array( $meta ) ) {
+				continue;
+			}
 			$paymentmeta = $meta['_give_payment_meta'];
 			$getmeta     = maybe_unserialize( $paymentmeta[0] );
 
