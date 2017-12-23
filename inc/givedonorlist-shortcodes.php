@@ -28,8 +28,7 @@ function give_donor_list_shortcode( $atts ) {
 
 	$out = ob_get_clean();
 
-	return $out;
-
+	return apply_filters( 'GDL/Shortcode/filter_output', $out, $atts );
 }
 
 add_shortcode( 'donor_list', 'give_donor_list_shortcode' );
