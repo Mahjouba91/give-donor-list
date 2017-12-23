@@ -5,6 +5,7 @@ require GIVEDONORLIST_DIR . 'inc/helpers.php';
 /**
  * A [donor_list] shortcode to list donors with names and amounts with attributes:
  *
+ * @title  = the title of donation list
  * @number  = the number of donations to list
  *
  * @param $atts
@@ -12,6 +13,7 @@ require GIVEDONORLIST_DIR . 'inc/helpers.php';
 function give_donor_list_shortcode( $atts ) {
 
 	$atts = shortcode_atts( apply_filters( 'GDL/Shortcode/filter_shortcode_atts', array(
+		'title'  => '',
 		'number'  => '',
 	) ), $atts, 'donor_list' );
 
