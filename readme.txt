@@ -42,18 +42,6 @@ In the search field type "Give Donor List" and click Search Plugins. Once you ha
 
 The manual installation method involves downloading the plugin and uploading it to your server via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
-== Frequently Asked Questions ==
-
-
-= Where can I submit Support Questions? =
-
-I'll answer all inquiries [here](https://wordpress.org/support/plugin/give-donor-list).
-
-= I have a feature request, or would like to contribute to this plugin. Where can I do that? =
-
-Give Donor List is hosted publicly on Github. I'd love your feedback and suggestions [there](https://github.com/jasontucker/give-donor-list/issues).
-
-
 == Changelog ==
 
 = 1.0 =
