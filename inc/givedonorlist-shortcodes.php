@@ -1,6 +1,6 @@
 <?php
 
-require GIVEDONORLIST_DIR . 'classes/helpers.php';
+require GIVEDONORLIST_DIR . 'inc/helpers.php';
 
 /**
  * A [donor_list] shortcode to list donors with names and amounts with attributes:

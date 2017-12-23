@@ -39,7 +39,7 @@ function givedonorlist_plugin_init() {
 	} else {
 
 		// Include/Execute necessary files
-		include_once( GIVEDONORLIST_DIR . '/classes/givedonorlist-shortcodes.php' );
+		include_once( GIVEDONORLIST_DIR . '/inc/givedonorlist-shortcodes.php' );
 
 	}
 }
